@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Gamez</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #000000, #0f0f0f);
+      color: #00fff7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 4rem;
+      text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00fff7;
+      margin-bottom: 30px;
+    }
+
+    .neon-button {
+      background: none;
+      border: 2px solid #00fff7;
+      color: #00fff7;
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 10px;
+      text-shadow: 0 0 5px #00fff7;
+      box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7 inset;
+      transition: 0.3s ease-in-out;
+    }
+
+    .neon-button:hover {
+      background: #00fff7;
+      color: #000;
+      box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7 inset;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #00fff7;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border: 2px solid #00fff7;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #00fff7;
+      transition: 0.2s;
+    }
+
+    .menu a:hover {
+      background-color: #00fff7;
+      color: #000;
+    }
+
+    #game-box {
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px dashed #00fff7;
+      border-radius: 10px;
+      width: 80%;
+      text-align: center;
+      min-height: 100px;
+      box-shadow: 0 0 10px #00fff7;
+    }
+  </style>
+</head>
+<body>
+  <h1>Elite Gamez</h1>
+  <div class="menu">
+    <a href="#" onclick="loadContent('home')">Home</a>
+    <a href="#" onclick="loadContent('games')">Games</a>
+    <a href="#" onclick="loadContent('about')">About</a>
+  </div>
+  <div id="game-box">Welcome to Elite Gamez. Click a menu item to explore!</div>
+  <button class="neon-button" onclick="surprise()">Click for Surprise</button>
+
+  <script>
+    function loadContent(page) {
+      const gameBox = document.getElementById('game-box');
+      switch(page) {
+        case 'home':
+          gameBox.innerHTML = '<h2>Welcome, Gamer!</h2><p>Level up your experience with the best in gaming.</p>';
+          break;
+        case 'games':
+          gameBox.innerHTML = '<h2>Our Games</h2><p>Explore elite titles, neon racers, battle arenas and more.</p>';
+          break;
+        case 'about':
+          gameBox.innerHTML = '<h2>About Elite Gamez</h2><p>We bring next-gen experiences to the hardcore and casual gamer alike.</p>';
+          break;
+      }
+    }
+
+    function surprise() {
+      alert('🔥 Elite Mode Activated! Prepare to dominate. 🔥');
+    }
+  </script>
+</body>
+</html>
